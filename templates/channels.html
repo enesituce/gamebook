@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+        {% block body %}
+            <br><br><br>
+            <div class="hover02 row">
+                <div class="column">
+                <figure><img src="{{url_for('static', filename='image/valorant_3.png')}}" /></figure>
+                <span>VALORANT</span>
+                </div>
+                <div class="column">
+                <figure><img src="{{url_for('static', filename='image/csgo_2.png')}}" /></figure>
+                <span>CS:GO</span>
+                </div>
+                <div class="column">
+                <figure><img src="{{url_for('static', filename='image/lol.png')}}" /></figure>
+                <span>League Of Legends</span>
+                </div>
+            </div>
+            
+
+
+
+            <style>
+                .row {
+                display: flex;
+                }
+                .column {
+                flex: 33.33%;
+                padding: 5px;
+                }
+                .hover02 figure img {
+                width: 300px;
+                height: auto;
+                -webkit-transition: .3s ease-in-out;
+                transition: .3s ease-in-out;
+                }
+                .hover02 figure:hover img {
+                    width: 350px;
+                }
+            </style>
+        {% endblock %}
