@@ -8,11 +8,22 @@
 
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav">
-            <a href="#" class="nav-item nav-link active">Profile</a>
-            <a href="/channels" class="nav-item nav-link active">Channels</a>
-            <a href="#" class="nav-item nav-link active">Friend List</a>
-            <a href="#" class="nav-item nav-link active">Sign Up</a>
-            <a href="#" class="nav-item nav-link active">Login</a>
+            
+
+            
+            
+            {% if session["logged_in"] %}
+                <a href="/profile" class="nav-item nav-link active">Profile</a>
+                <a href="/channels" class="nav-item nav-link active">Channels</a>
+                <a href="/friendlist" class="nav-item nav-link active">Friend List</a>
+                <a href="/logout" class="nav-item nav-link active">Logout</a>
+            {% else %}
+                <a href="/login" class="nav-item nav-link active">Login</a>
+                <a href="/signup" class="nav-item nav-link active">Sign Up</a>
+            {% endif %}
+            
+            
+           
         </div>
     </div>
 

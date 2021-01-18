@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+    {% block body %}
+    {% from "includes/formhelper.html" import render_field %}
+        <br><br>
+        <div class="container emp-profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="{{url_for('static', filename='image/profile.png')}}" alt=""/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h5>
+                                        {{session["name"]}}
+                                    </h5>
+                                                 
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Username</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{session["username"]}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{session["name"]}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{session["email"]}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Age</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{session["age"]}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Gameplay Preference</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{session["gameplay_preference"]}}</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Gender</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{session["gender"]}}</p>
+                                            </div>
+                                            
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>           
+        </div>
+        <a class="btn btn-danger" href="/editacc/ {{session["id"]}}" role="button">Edit</a>
+        <a class="btn btn-danger" href="/deleteacc/ {{session["id"]}}" role="button">Delete Account</a>
+    {% endblock %}

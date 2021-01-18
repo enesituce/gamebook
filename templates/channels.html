@@ -4,15 +4,15 @@
             <br><br><br>
             <div class="hover02 row">
                 <div class="column">
-                <figure><img src="{{url_for('static', filename='image/valorant_3.png')}}" /></figure>
+                <figure><a href="/valorant"> <img  src="{{url_for('static', filename='image/valorant_3.png')}}" />  </a> </figure>
                 <span>VALORANT</span>
                 </div>
                 <div class="column">
-                <figure><img src="{{url_for('static', filename='image/csgo_2.png')}}" /></figure>
+                <figure> <a href="/csgo"> <img  src="{{url_for('static', filename='image/csgo_2.png')}}" /> </a> </figure>
                 <span>CS:GO</span>
                 </div>
                 <div class="column">
-                <figure><img src="{{url_for('static', filename='image/lol.png')}}" /></figure>
+                <figure> <a href="/lol"> <img src="{{url_for('static', filename='image/lol.png')}}" />  </a>  </figure>
                 <span>League Of Legends</span>
                 </div>
             </div>
@@ -36,6 +36,9 @@
                 }
                 .hover02 figure:hover img {
                     width: 350px;
+                }
+                img {
+                    border-radius: 50%;
                 }
             </style>
         {% endblock %}

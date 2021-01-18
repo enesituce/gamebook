@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+    {% block body %}
+    {% from "includes/formhelper.html" import render_field %}
+
+    <br><br><br>
+    <h3>Your Friends</h3>
+    <hr>
+    <form method="post">
+       
+        {{render_field(form.to_user)}}
+        <button type="submit" class="btn btn-dark">Add Friend</button> 
+       
+    </form>
+
+    <br><br><hr>
+
+    
+    {% if friend_requests %}
+        <table class="table table-hover table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Request From</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for friend_request in friend_requests %}
+            <tr>
+                <th scope="row">{{friend_request.from_user}}</th>
+                <td><a class="btn btn-success" href="/accept/{{friend_request.id}}" role="button">Accept</a></td>
+                <td><a class="btn btn-danger" href="/decline/{{friend_request.id}}" role="button">Decline</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+    
+    {% endif %}
+
+
+
+    {% if friends %}
+    <table class="table table-hover table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Friend Username</th>
+            <th scope="col">Friendship Date</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for friend in friends %}
+            <tr>
+                <th scope="row">{{friend.friend_username}}</th>
+                <td>{{friend.friendship_time}}</td>
+                <td><a class="btn btn-danger" href="/deletefriend/{{friend.id}}" role="button">Delete Friend</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <div class = "alert alert-success">You have no friends yet!</div>
+    {% endif %}
+    {% endblock %}

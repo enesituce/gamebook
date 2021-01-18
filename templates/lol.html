@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+        
+
+        {% block body %}
+            {% from "includes/formhelper.html" import render_field %}
+            <br>
+            <h3>Welcome to League of Legends Channel!</h3>
+            <hr>
+            
+            <form method="post">
+                {{render_field(form.title, class = "form-control") }}
+                {{render_field(form.content, class = "form-control") }}
+                {{render_field(form.gameName, class = "form-control") }}
+                <button type="submit" class="btn btn-dark">Share</button>
+            </form>
+            <hr>
+            <h3>Latest posts</h3>
+            <hr>
+            {% if posts %}
+                {% for post in posts %}
+                    
+                    <div class="card text-center">
+                        <div class="card-header">
+                        posted by {{post.creator}}
+                        </div>
+                        <div class="card-body">
+                        <h5 class="card-title">{{post.title}}</h5>
+                        <p class="card-text">{{post.content|safe}}</p>
+
+                        {% if post.creator == session["username"] %}
+                                <a href="/editpost/{{post.id}}" class="btn btn-primary">Edit</a>
+                                <a href="/deletepost/{{post.id}}" class="btn btn-primary">Delete</a>
+                        {% else %}
+
+                        {% endif %}
+
+                        
+
+
+
+                        </div>
+                        <div class="card-footer text-muted">
+                        {{post.created_date}}
+                        </div>
+                        <br><br>
+
+                {% endfor %}
+
+        
+            {% else %}
+             <div class = "alert alert-danger">There is no post in this channel!</div>
+            {% endif %}
+            
+
+
+        {% endblock %}
