@@ -34,7 +34,7 @@ app.secret_key="gamebook"
 app.config["MYSQL_HOST"]="eu-cdbr-west-03.cleardb.net"
 app.config["MYSQL_USER"]="b281ec7fc15a59"
 app.config["MYSQL_PASSWORD"]="8cb704bc"
-app.config["MYSQL_DB"]="`heroku_5de20b09faa6a1b`"
+app.config["MYSQL_DB"]="heroku_5de20b09faa6a1b"
 app.config["MYSQL_CURSORCLASS"]="DictCursor"
 
 
