@@ -31,10 +31,10 @@ class FriendRequest(Form):
 app= Flask(__name__)
 app.secret_key="gamebook"
 
-app.config["MYSQL_HOST"]="localhost"
-app.config["MYSQL_USER"]="root"
-app.config["MYSQL_PASSWORD"]=""
-app.config["MYSQL_DB"]="gamebook"
+app.config["MYSQL_HOST"]="eu-cdbr-west-03.cleardb.net"
+app.config["MYSQL_USER"]="b281ec7fc15a59"
+app.config["MYSQL_PASSWORD"]="8cb704bc"
+app.config["MYSQL_DB"]="`heroku_5de20b09faa6a1b`"
 app.config["MYSQL_CURSORCLASS"]="DictCursor"
 
 
