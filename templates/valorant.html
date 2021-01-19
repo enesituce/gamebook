@@ -11,6 +11,15 @@
                 {{render_field(form.title, class = "form-control") }}
                 {{render_field(form.content, class = "form-control") }}
                 {{render_field(form.gameName, class = "form-control") }}
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Select Game</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>lol</option>
+                        <option>valorant</option>
+                        <option>csgo</option>
+                    </select>
+                </div>
+                <br>
                 <button type="submit" class="btn btn-dark">Share</button>
             </form>
             <hr>

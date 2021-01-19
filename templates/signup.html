@@ -14,6 +14,22 @@
                 {{render_field(form.gameplay_preference, class="form-control") }}
                 {{render_field(form.gender, class="form-control") }}
                 {{render_field(form.password, class="form-control") }}
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Accept the privacy policies.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                      Don't send me e-mail.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                        Get news from us via e-mail!
+                    </label>
+                </div>
                 <button type="submit" class="btn btn-dark">Sign Up</button>
             </form>
         {% endblock %}
